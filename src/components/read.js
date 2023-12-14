@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Books from "./books";
+import TradingCards from "./tradingcards";
 
 function Read() {
    
@@ -9,7 +9,7 @@ function Read() {
   useEffect(
     ()=>{
         
-        axios.get('http://localhost:4000/api/books')
+        axios.get('http://localhost:4000/api/tradingcards')
         .then(
             (response)=>{
                 setData(response.data)
@@ -25,7 +25,7 @@ function Read() {
   );
 
   const Reload = (e)=>{
-    axios.get('http://localhost:4000/api/books')
+    axios.get('http://localhost:4000/api/tradingcards')
         .then(
             (response)=>{
                 setData(response.data)
@@ -41,7 +41,7 @@ function Read() {
     return (
         <div>
             <h2>Hello from Read Component!</h2>
-            <Books myBooks={data} ReloadData={Reload}></Books>
+            <TradingCards myTradingCards={data} ReloadData={Reload}></TradingCards>
         </div>
     );
 

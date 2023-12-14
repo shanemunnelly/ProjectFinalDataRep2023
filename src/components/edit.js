@@ -14,7 +14,7 @@ export default function Edit() {
     useEffect(
         ()=>{
 
-            axios.get('http://localhost:4000/api/book/'+id)
+            axios.get('http://localhost:4000/api/tradingcard/'+id)
             .then((response)=>{
                 setTitle(response.data.title);
                 setCover(response.data.cover);
@@ -31,13 +31,13 @@ export default function Edit() {
     const handleSubmit = (e)=>{
         e.preventDefault();
 
-        const book = {
+        const tradingcard = {
             title:title,
             cover:cover,
             author:author
         }
 
-        axios.put('http://localhost:4000/api/book/'+id, book)
+        axios.put('http://localhost:4000/api/tradingcard/'+id, tradingcard)
         .then((res)=>{
             navigate('/read');
         })
@@ -51,7 +51,7 @@ export default function Edit() {
             <h2>Hello from Edit component!</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label>Edit Book Title: </label>
+                    <label>Edit Trading Card Title: </label>
                     <input type="text"
                         className="form-control"
                         value={title}
@@ -59,7 +59,7 @@ export default function Edit() {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Edit Book Cover: </label>
+                    <label>Edit Trading Card Cover: </label>
                     <input type="text"
                         className="form-control"
                         value={cover}
@@ -67,7 +67,7 @@ export default function Edit() {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Edit Book Author: </label>
+                    <label>Edit Trading Card Author: </label>
                     <input type="text"
                         className="form-control"
                         value={author}
@@ -76,7 +76,7 @@ export default function Edit() {
                 </div>
                 <div>
                     <input type="submit"
-                    value="Edit Book">
+                    value="Edit TradingCard">
                         </input>
                 </div>
             </form>

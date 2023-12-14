@@ -14,13 +14,13 @@ function Create() {
         " Cover: "+cover+
         " Author: "+author);
 
-        const book = {
+        const tradingcard = {
             title:title,
             cover:cover,
             author:author
         };
 
-        axios.post('http://localhost:4000/api/book',book)
+        axios.post('http://localhost:4000/api/tradingcard',tradingcard)
         .then()
         .catch();
 
@@ -31,7 +31,7 @@ function Create() {
             <h2>Hello from create Component!</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label>Add Book Title: </label>
+                    <label>Add Trading Card Name: </label>
                     <input type="text"
                         className="form-control"
                         value={title}
@@ -39,7 +39,7 @@ function Create() {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Add Book Cover: </label>
+                    <label>Add Trading Card Art: </label>
                     <input type="text"
                         className="form-control"
                         value={cover}
@@ -47,7 +47,7 @@ function Create() {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Add Book Author: </label>
+                    <label>Add Trading Card Artist: </label>
                     <input type="text"
                         className="form-control"
                         value={author}
@@ -56,7 +56,7 @@ function Create() {
                 </div>
                 <div>
                     <input type="submit"
-                    value="Add Book">
+                    value="Add TradingCard">
                         </input>
                 </div>
             </form>
